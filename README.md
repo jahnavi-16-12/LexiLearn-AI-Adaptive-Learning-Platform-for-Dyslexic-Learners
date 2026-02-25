@@ -6,16 +6,48 @@ Lexilearn AI is a comprehensive, AI-powered platform designed specifically to su
 
 ## 📸 Screenshots
 
-![Dashboard Overview](PLACEHOLDER_FOR_DASHBOARD_SCREENSHOT)
-*The main dashboard provides a central hub for students and parents.*
+### 🏠 Landing Page
+Clean and accessible entry interface introducing the platform and its adaptive learning approach.
 
-![Screening Test](PLACEHOLDER_FOR_SCREENING_TEST_SCREENSHOT)
-*A professional, calm assessment interface to identify learning needs.*
+![Landing Page](screenshots/landingpage.png)
+---
+### 📝 AI Screening Test
+Professional assessment interface designed to evaluate reading abilities and detect learning patterns.
 
-![Reading Practice](PLACEHOLDER_FOR_READING_PRACTICE_SCREENSHOT)
-*Interactive reading practice with real-time AI feedback and coaching.*
+![Screening Test](screenshots/screening1.png)
+---
+### 📊 Screening Results
+Detailed AI-generated performance insights with identified strengths and improvement areas.
+
+![Screening Results](screenshots/screening2.png)
 
 ---
+### 🤖 Smart Homework Help
+AI-powered homework assistant delivering simplified explanations and contextual guidance.
+
+![Homework Help](screenshots/homeworkhelp.png)
+
+---
+### 🎮 Fun Arcade
+Gamified cognitive and phonics-based activities to enhance engagement and skill development.
+
+![Fun Arcade](screenshots/funarcade.png)
+
+---
+
+### 👨‍👩‍👧 Parent Dashboard
+Comprehensive analytics dashboard tracking student progress, accuracy, and improvement trends.
+
+![Parent Dashboard](screenshots/parentdashboard.png)
+
+---
+### 📖 Reading Practice
+Interactive reading module with real-time AI feedback and guided coaching.
+
+![Reading Practice](screenshots/readingpractice.png)
+
+---
+
 
 ## ✨ Key Features
 
