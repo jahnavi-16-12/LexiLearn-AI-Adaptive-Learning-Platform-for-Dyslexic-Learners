@@ -1,0 +1,8 @@
+# Exclude directories that don't need language server analysis
+__pycache__/
+*.pyc
+.env
+uploads/
+node_modules/
+frontend/
+.git/

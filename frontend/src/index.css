@@ -1,0 +1,278 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('./assets/fonts/OpenDyslexic-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('./assets/fonts/OpenDyslexic-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  .hover-glow {
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .card-lift {
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  }
+
+  .card-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+
+    .animate-fade-in,
+    .animate-slide-up {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bg-pattern-dots {
+  background-image: radial-gradient(var(--accent-lavender) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-pattern-grid {
+  background-image: linear-gradient(var(--accent-pink) 1px, transparent 1px),
+    linear-gradient(90deg, var(--accent-pink) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@keyframes bounce-slow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.9), 0 0 40px rgba(255, 215, 0, 0.5);
+  }
+}
+
+@keyframes breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+  }
+
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 4px 25px rgba(74, 144, 226, 0.5), 0 0 20px rgba(74, 144, 226, 0.3);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe 2.5s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-pop {
+  animation: pop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Dyslexia Friendly Theme */
+.dyslexia-cream {
+  background-color: #FEF9EE;
+  color: #1F2525;
+  font-family: 'OpenDyslexic', Arial, sans-serif;
+  line-height: 1.8;
+}
+
+.island-gradient-1 {
+  background: linear-gradient(180deg, #86efac 0%, #22c55e 100%);
+}
+
+.island-gradient-2 {
+  background: linear-gradient(180deg, #60a5fa 0%, #2563eb 100%);
+}
+
+.island-gradient-3 {
+  background: linear-gradient(180deg, #a855f7 0%, #7e22ce 100%);
+}
+
+@layer base {
+  :root {
+    --background: #FFF4E6;
+    --foreground: #172554;
+    --primary: #172554;
+    --primary-dark: #0f172a;
+    --accent: #F59E0B;
+    --card-bg: #FFFFFF;
+    --muted: #475569;
+    --accent-pink: #FFF0F3;
+    --accent-lavender: #F3E8FF;
+  }
+}
+
+/* Theme Overrides applied to HTML tag */
+:root.theme-cream {
+  --background: #FFF4E6;
+  --foreground: #172554;
+  --primary: #172554;
+  --primary-dark: #0f172a;
+  --accent: #F59E0B;
+  --card-bg: #FFFFFF;
+  --muted: #475569;
+  --accent-pink: #FFF0F3;
+  --accent-lavender: #F3E8FF;
+}
+
+:root.theme-gray {
+  --background: #F8FAFC;
+  --foreground: #1E293B;
+  --primary: #334155;
+  /* Slate-700 */
+  --primary-dark: #0f172a;
+  --accent: #94A3B8;
+  --card-bg: #FFFFFF;
+  /* Pure White cards */
+  --muted: #64748B;
+  --accent-pink: #FFF0F3;
+  --accent-lavender: #F3E8FF;
+}
+
+:root.theme-yellow {
+  --background: #FFFBEB;
+  --foreground: #451a03;
+  --primary: #854d0e;
+  /* Warm Sepia/Bronze (Yellow-900) */
+  --primary-dark: #451a03;
+  /* Dark Brown (Amber-950) */
+  --accent: #D97706;
+  --card-bg: #FEF3C7;
+  /* Pale Yellow Card */
+  --muted: #78350F;
+  --accent-pink: #FFF0F3;
+  --accent-lavender: #F3E8FF;
+}
+
+/* Body styles using the variables */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition-property: background-color, color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+/* Font Family Overrides */
+:root.font-arial body,
+.font-arial {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+:root.font-verdana body,
+.font-verdana {
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
+
+:root.font-opendyslexic body,
+.font-opendyslexic {
+  font-family: 'OpenDyslexic', sans-serif !important;
+}
+
+:root.font-opendyslexic-mono body,
+.font-opendyslexic-mono {
+  font-family: 'OpenDyslexicMono', monospace !important;
+}
+
+@font-face {
+  font-family: 'OpenDyslexicMono';
+  src: url('./assets/fonts/OpenDyslexicMono-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
